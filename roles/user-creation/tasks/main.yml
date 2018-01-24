@@ -1,5 +1,5 @@
-- tasks:
-  name: Creating the users.
+---
+- name: Creating the users.
   user:
     name: "{{ sname }}"
     password:  "{{ 'Abcd123' | password_hash('sha512') }}"
