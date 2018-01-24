@@ -1,8 +1,5 @@
 ---
-- become: yes
-  
-  tasks:
-  - name: Deleting the users.
+- name: Deleting the users.
     user:
       name: "{{ sname }}"
       state: absent
