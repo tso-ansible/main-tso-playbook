@@ -1,4 +1,0 @@
----
- -  become: true
-    roles:
-      - create-file1
