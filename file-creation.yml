@@ -1,5 +1,4 @@
 ---
- - hosts: all  
-   become: true
+ - become: true 
    roles:
      - file-creation
