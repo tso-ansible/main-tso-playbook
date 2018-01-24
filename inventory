@@ -1,0 +1,11 @@
+[poc1]
+10.193.176.5
+
+[po2]
+10.193.176.6
+
+[datacenter:children]
+poc1
+poc2
+
+[datacenter:vars]
