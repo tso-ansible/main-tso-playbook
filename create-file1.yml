@@ -1,4 +1,5 @@
 ---
- -  become: true
-    roles:
-      - create-file1
+ - hosts: all  
+   become: true
+   roles:
+     - create-file1
