@@ -8,7 +8,9 @@
     <table border="0" cellpadding="10">
       <tr>
         <td>
-test
+{% for host in groups['poc1'] %}
+   {{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
+{% endfor %}
         </td>
         $<td>
 {% if users is defined and users %}
