@@ -1,4 +1,8 @@
 ---
- - name: Install Tree
-   yum: name={{ software }} list
-   when: ansible_os_family == "RedHat"
+- name: List Software
+  yum:
+    list={{ software }}
+  register: yum_packages
+
+- debug:
+    var: yum_packages
