@@ -1,4 +1,4 @@
 ---
 - name: Hello User
   debug:
-    msg: "Hello User {{ username | upper }}! Your password {{ userpass }} and your fullname {{ userfull | upper }}. You are a {{ sex | upper }}." 
+    msg: "Hello User {{ username | upper }}! Your password {{ userpass }} and your fullname {{ userfull | upper }}. You are a {{ sx | upper }}." 
