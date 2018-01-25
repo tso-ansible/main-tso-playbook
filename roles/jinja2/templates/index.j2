@@ -1,17 +1,22 @@
 #jinja2:lstrip_blocks: True
 <html>
   <head>
-    <title>address {{ host.management.ip }}/{{ host.management.mask }};</title>
+    <title>Get the server info</title>
   </head>
   <body bgcolor=white>
 
     <table border="0" cellpadding="10">
       <tr>
         <td>
-          <img src="images/springsource.png">
+{% for host in groups['poc'] %}
+   {{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
+{% endfor %}
         </td>
-        <td>
-          <h1>Sample "Hello, World" Application</h1>
+        $<td>
+{% if users is defined and users %}
+{% for user in users %}{{ user }}
+{% endfor %}
+{% endif %}
         </td>
       </tr>
     </table>
