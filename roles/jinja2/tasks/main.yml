@@ -3,6 +3,3 @@
   template:
     src=index.j2
     dest=/var/www/index.html
-    owner: root
-    group: root
-    mode: "u=rw,g=r,o=r"
