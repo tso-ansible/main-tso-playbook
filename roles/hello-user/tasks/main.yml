@@ -1,0 +1,4 @@
+---
+- name: Hello User
+  debug:
+  msg: "Hello User {{ username }}! Your password {{ userpass }} and your fullname {{ userfull }}" 
