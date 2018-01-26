@@ -4,3 +4,5 @@ users:
   - lazaroall
   - xu
   - sharma
+
+dnsserver: 8.8.8.8
