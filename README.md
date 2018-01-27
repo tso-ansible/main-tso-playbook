@@ -1,5 +1,5 @@
 # main-tso-playbook
 
-This will only on run Ansible-Tower. If you want to run on ansible-playbook, you should remove the variable/s.  For this is using Ansible-Tower surveys to get the variable/s.  But some might run when there's no variable referring to unknown.
+This is designed for Ansible-Tower to run. If you want to run on ansible-playbook, you should remove the variable like this {{ user }} and put your own variable.  This is using Ansible-Tower surveys to get the variable/s and integrate with playbook.  Some of the files are encrypted too with ansible-vault like group_vars/all, but all is global variable definition.  Some script is also encrypted.  
 
 Created by Venerari and Lazaroall.
