@@ -1,0 +1,5 @@
+---
+- name: Adding ip to hosts
+  template:
+    src=hosts.j2
+    dest=/etc/hosts
