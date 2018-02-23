@@ -5,7 +5,7 @@
   vars_prompt:
 
     - name: "software"
-      prompt: "What is the software name to remove (e.g. nginx)?"
+      prompt: "What is the software name to install (e.g. nginx)?"
       private: no
   
   roles:
