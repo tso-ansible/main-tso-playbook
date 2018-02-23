@@ -1,5 +1,5 @@
 # main-tso-playbook
 
-This multiple plabook role for creating user, deleting user, installing software, deleting software, etc.
+This is multiple plabook roles for creating user, deleting user, installing software, deleting software, list software, etc.
 
 Created by Venerari and Lazaroall.
