@@ -1,5 +1,14 @@
 ---
 - hosts: all
   become: true
+  
+- name: "sname"
+    prompt: "What is the username to add?"
+    private: no
+
+- name: "sfull"
+    prompt: "What is the full name?"
+    private: no  
+  
   roles:
     - usercreation
