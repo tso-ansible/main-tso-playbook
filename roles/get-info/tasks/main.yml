@@ -1,6 +1,7 @@
 ---
 
-- debug: var=ansible_distribution
+- name: Get the Linux Vendor
+  debug: var=ansible_distribution
 
 - debug: var=ansible_processor_cores
 
