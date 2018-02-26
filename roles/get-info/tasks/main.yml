@@ -8,3 +8,6 @@
   shell: iptables -L -n
   args:
     executable: /bin/bash
+  register: out
+  
+- debug: var=out.stdout_lines
