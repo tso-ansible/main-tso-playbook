@@ -13,3 +13,14 @@
   
 - name: Get total CPU in MB
   debug: var=out.stdout_lines
+
+- shell:   fdisk -l|grep /dev/sd
+  args:
+    executable: /bin/bash
+  register: out
+  
+- name: Get the disk info
+  debug: var=out.stdout_lines
+
+  
+
