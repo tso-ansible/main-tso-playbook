@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  
+- name: "servername"
+    prompt: "What is the servername/ip?"
+    private: no
+    
+  roles:
+    - get-info
