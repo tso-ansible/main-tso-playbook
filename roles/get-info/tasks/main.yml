@@ -1,0 +1,10 @@
+---
+
+- debug: var=ansible_distribution
+
+- debug: var=ansible_processor_cores
+
+- name: Get the firewall ports info
+  shell: iptables -L -n
+  args:
+    executable: /bin/bash
