@@ -3,13 +3,13 @@
 - name: Get the Linux Vendor
   debug: var=ansible_distribution
 
-- debug: var=ansible_processor_cores
+- name: Get the cpu cores
+  debug: var=ansible_processor_cores
 
-- name: Get total cpu in MB
-  #shell: iptables -L -n
-  shell: awk '/MemTotal/ {print $2}' /proc/meminfo
+- shell: awk '/MemTotal/ {print $2}' /proc/meminfo
   args:
     executable: /bin/bash
   register: out
   
-- debug: var=out.stdout_lines
+- name: Get total CPU in MB
+  debug: var=out.stdout_lines
