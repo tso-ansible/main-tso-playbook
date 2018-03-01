@@ -30,10 +30,14 @@
   args:
     executable: /bin/bash
  
-
-- shell: awk '/Disk \/dev\/sd/ {print $3}' disk  >> /tmp/{{ ansible_hostname }}_data.csv
+- shell: awk '/Disk \/dev\/sd/ {print $3}' disk  > disk
   args:
     executable: /bin/bash
+    
+- shell: awk '{sum+=$1} (NR%3)==0{print sum}' disk >> /tmp/{{ ansible_hostname }}_data.csv
+  args:
+    executable: /bin/bash
+    
 
 
  
