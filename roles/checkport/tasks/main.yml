@@ -1,7 +1,7 @@
 ---
 
-- name: Check if remote host port 22
-  wait_for: host=mysql port=22 timeout=10
+- name: Check if remote host port 80
+  wait_for: host=mysql port=80 timeout=10
   ignore_errors: True
 
 - debug: msg=ok
