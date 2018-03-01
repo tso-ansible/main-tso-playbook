@@ -1,0 +1,8 @@
+---
+
+ - hosts: sdcgigdcapmdw01
+   #gather_facts: false
+   become: true
+  
+   roles:
+     - get-info-csv
