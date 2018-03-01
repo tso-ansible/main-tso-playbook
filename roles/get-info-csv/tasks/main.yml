@@ -1,6 +1,6 @@
 ---
 
-- shell: hostname
+- shell: hostname > /tmp/{{ ansible_hostname }}info.csv
   #no_log: true
   args:
     executable: /bin/bash
