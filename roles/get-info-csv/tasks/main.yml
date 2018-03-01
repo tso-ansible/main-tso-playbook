@@ -25,7 +25,8 @@
   args:
     executable: /bin/bash
 
-- name: Get Total Disk    
+- name: Get Total Disk in GB only    
+  #calculation is wrong if there's a disk with MB
   shell: fdisk -l|grep /dev/sd > disk
   args:
     executable: /bin/bash
