@@ -2,5 +2,6 @@
 
 - name: Check if remote host port 80
   wait_for: host=vm2 port=80 timeout=10
+  ignore_errors: True
 
 - debug: msg=ok
