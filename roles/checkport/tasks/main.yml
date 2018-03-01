@@ -1,5 +1,5 @@
 ---
 
-- wait_for: host=vm2 port=80 timeout=1
+- wait_for: host=vm2 port=2 timeout=1
 
 - debug: msg=ok
