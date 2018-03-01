@@ -25,7 +25,7 @@
   args:
     executable: /bin/bash
 
-- name: Get Disk    
+- name: Get Total Disk    
   shell: fdisk -l|grep /dev/sd > disk
   args:
     executable: /bin/bash
