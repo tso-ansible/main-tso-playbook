@@ -1,6 +1,6 @@
 ---
 
-- hosts: sdcgigdcapmdw01
+- hosts: sdcgisazapmdw05
   become: true
   
   vars_prompt:  
