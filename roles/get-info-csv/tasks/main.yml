@@ -21,7 +21,7 @@
     executable: /bin/bash
 
 - name: Get memory in GB
-  shell: awk '{ print $1/1000000}' memory
+  shell: awk '{ print $1/1000000}' memory >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash
 
