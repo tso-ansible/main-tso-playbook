@@ -2,5 +2,11 @@
 
 - hosts: web1
   become: true
+  
+  vars_prompt:  
+    - name: "port"
+      prompt: "What is the port?"
+      private: no
+  
   roles:
     - checkport
