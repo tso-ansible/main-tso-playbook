@@ -7,7 +7,7 @@
     executable: /bin/bash
 
 - name: Get hostname
-  shell: hostname -I | cut -d' ' -f1 > /tmp/{{ ansible_hostname }}_data.csv
+  shell: hostname -I | cut -d' ' -f1 >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash
 
