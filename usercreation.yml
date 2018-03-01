@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: mysql
   become: true
   
   vars_prompt:  
