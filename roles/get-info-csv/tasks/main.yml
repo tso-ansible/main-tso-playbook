@@ -52,15 +52,15 @@
 - name: Check if remote {{ remote1 }} host port {{ port1 }}
   wait_for: host={{ remote1 }} port={{ port1 }} timeout=4
   ignore_errors: True
-  #register: result
+  register: result
 
 - name: Put {{ remote1 }} port {{ port1 }} in CSV
-  shell: echo 'NOTE,{{ remote1 }}, is open,{{ port1 }},'  >> /tmp/{{ ansible_hostname }}_output.csv
+  shell: printf '\n,{{ remote1 }}, is open,{{ port1 }},'  >> /tmp/{{ ansible_hostname }}_output.csv
   args:
     executable: /bin/bash
-  #when: result|succeeded
+  when: result|succeeded
   
-- name: test
+- name: Delimi
   shell: echo 'test'  >> /tmp/{{ ansible_hostname }}_output.csv
   args:
     executable: /bin/bash
