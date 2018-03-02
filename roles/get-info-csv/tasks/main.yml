@@ -52,12 +52,13 @@
 - name: Check if remote {{ remote1 }} host port {{ port1 }}
   wait_for: host={{ remote1 }} port={{ port1 }} timeout=4
   ignore_errors: True
+  register: result
 
 - name: Put {{ remote1 }} port {{ port1 }} in CSV
   shell: echo ',{{ remote1 }}, is open,{{ port1 }}'  >> /tmp/{{ ansible_hostname }}_output.csv
   args:
     executable: /bin/bash
-  when: "'FAILED' in command_result.stderr"
+  when: result.changed
   
 
    
