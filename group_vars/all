@@ -16,3 +16,6 @@ line5: "10.193.176.6 ldapdev02 rus_ldap_app_svc_02"
 userfull: "John Doe"
 username: john
 sx: male
+
+remote1: sdcgigdcapmdw01
+port1: 22
