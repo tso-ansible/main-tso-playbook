@@ -1,7 +1,7 @@
 ---
 
 - name: Check if remote host port {{ port }}
-  wait_for: host=sdcgigdcapmdw02 port={{ port }} timeout=10
+  wait_for: host=vm2 port={{ port }} timeout=10
   ignore_errors: True
 
 
