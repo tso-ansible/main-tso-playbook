@@ -60,10 +60,16 @@
     executable: /bin/bash
   when: result|succeeded
   
-- name: Delimi
-  shell: echo 'test'  >> /tmp/{{ ansible_hostname }}_output.csv
+- name: Check if remote {{ remote1 }} host port {{ port2 }}
+  wait_for: host={{ remote1 }} port={{ port2 }} timeout=4
+  ignore_errors: True
+  register: result
+
+- name: Put {{ remote1 }} port {{ port1 }} in CSV
+  shell: printf '\n,{{ remote1 }}, is open,{{ port2 }},'  >> /tmp/{{ ansible_hostname }}_output.csv
   args:
     executable: /bin/bash
+  when: result|succeeded
 
    
 
