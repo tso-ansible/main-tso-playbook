@@ -1,6 +1,6 @@
 ---
 
- - hosts: sdcgigdcapmdw01
+ - hosts: all
    gather_facts: true
    become: true
   
