@@ -1,0 +1,6 @@
+---
+
+- name: Fetching file
+  fetch:
+    src: /tmp/{{ server }}_output.csv
+    dest: /tmp/fetched.csv
