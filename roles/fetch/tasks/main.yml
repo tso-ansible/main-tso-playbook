@@ -2,5 +2,5 @@
 
 - name: Fetching file
   fetch:
-    src: /tmp/{{ server }}_output.csv
+    src: /tmp/{{ ansible_hostname }}_output.csv
     dest: /tmp/fetched.csv
