@@ -3,4 +3,4 @@
 - name: Fetching file
   fetch:
     src: /tmp/{{ ansible_hostname }}_output.csv
-    dest: /tmp/fetched.csv
+    dest: /tmp/fetched
