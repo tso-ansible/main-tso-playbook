@@ -1,6 +1,6 @@
 ---
 
-- hosts: centos
+- hosts: sdcgigdcapmdw01
   become: true
   
   vars_prompt:  
