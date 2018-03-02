@@ -38,7 +38,13 @@
 - shell: awk '{sum+=$1} (NR%3)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash
+
+- name: Put it in CSV in one line
+  shell: cat /tmp/{{ ansible_hostname }}_data.csv | awk '{print}' ORS=','  > /tmp/{{ ansible_hostname }}_output.csv
+  args:
+    executable: /bin/bash
     
+   
 
 
  
