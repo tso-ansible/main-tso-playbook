@@ -7,6 +7,9 @@
     - name: "port"
       prompt: "What is the port?"
       private: no
+    - name: "server"
+      prompt: "What is the remote server?"
+      private: no
   
   roles:
     - checkport
