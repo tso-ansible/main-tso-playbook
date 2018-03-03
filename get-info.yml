@@ -1,7 +1,0 @@
----
-# remarks
- - hosts: poc
-   become: true
-  
-   roles:
-     - get-info
