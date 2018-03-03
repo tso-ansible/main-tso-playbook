@@ -44,11 +44,6 @@
   args:
     executable: /bin/bash
 
-- name: Clear CSV
-  shell: echo '' > /tmp/{{ ansible_hostname }}_output.csv
-  args:
-    executable: /bin/bash
-
 - name: Put it in CSV in one line
   shell: cat /tmp/{{ ansible_hostname }}_data.csv | awk '{print}' ORS=','  >> /tmp/{{ ansible_hostname }}_output.csv
   args:
