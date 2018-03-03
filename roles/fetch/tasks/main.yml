@@ -4,6 +4,7 @@
   shell: rm -fr /tmp/fetched/ 
   args:
     executable: /bin/bash
+    warn: false
   ignore_errors: True
   delegate_to: localhost
     
