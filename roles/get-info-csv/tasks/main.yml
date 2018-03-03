@@ -61,7 +61,7 @@
   when: result|succeeded
   
 - name: Check if remote {{ remote1 }} host port {{ port2 }}
-  wait_for: host={{ remote1 }} port={{ port2 }} timeout=4
+  wait_for: host={{ remote1 }} port={{ port2 }} timeout=1
   ignore_errors: True
   register: result
 
