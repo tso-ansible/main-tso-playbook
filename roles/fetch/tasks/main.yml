@@ -1,9 +1,9 @@
 ---
 
-- name: delete local /tmp/fetched
-  shell: rm -fr /tmp/fetched/ 
-  args:
-    executable: /bin/bash
+- name: Clean tmp fetched
+  file:
+    state: absent
+    path: "/tmp/fetched/"
   ignore_errors: True
   delegate_to: localhost
     
