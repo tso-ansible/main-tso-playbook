@@ -39,8 +39,13 @@
   args:
     executable: /bin/bash
 
-- name: Put CSV Header output.csv
-  shell: echo 'Hostname,IP,CPU-core,Ram,Disk,' > /tmp/{{ ansible_hostname }}_output.csv
+#- name: Put CSV Header output.csv
+#  shell: echo 'Hostname,IP,CPU-core,Ram,Disk,' > /tmp/{{ ansible_hostname }}_output.csv
+#  args:
+#    executable: /bin/bash
+
+- name: Clear CSV
+  shell: echo '' > /tmp/{{ ansible_hostname }}_output.csv
   args:
     executable: /bin/bash
 
