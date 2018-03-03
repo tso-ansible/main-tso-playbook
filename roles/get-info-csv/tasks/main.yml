@@ -46,8 +46,6 @@
     warn: false
   ignore_errors: True
 
-#  shell: echo 'Hostname,IP,CPU-core,Ram,Disk' > /tmp/{{ ansible_hostname }}_output.csv
-
 - name: Put it in CSV in one line
   shell: cat /tmp/{{ ansible_hostname }}_data.csv | awk '{print}' ORS=','  > /tmp/{{ ansible_hostname }}_output.csv
   args:
@@ -90,7 +88,6 @@
 
 - name: Run once on localhost
   shell: echo 'Hostname,IP,CPU-core,Ram,Disk' > /tmp/fetched/main_output.csv 
-  #&& printf '\r\n' >> /tmp/fetched/main_output.csv
   run_once: True
   delegate_to: localhost    
 
