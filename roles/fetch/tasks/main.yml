@@ -15,3 +15,4 @@
   shell: cat /tmp/fetched/{{ ansible_hostname }}/tmp/{{ ansible_hostname }}_output.csv >> /tmp/main_output.csv
   args:
     executable: /bin/bash
+  delegate_to: 127.0.0.1
