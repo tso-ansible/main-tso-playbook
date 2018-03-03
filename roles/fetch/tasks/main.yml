@@ -5,7 +5,6 @@
   args:
     executable: /bin/bash
   ignore_errors: True
-  ignore_warnings: True
   delegate_to: localhost
     
 - name: Fetching file
