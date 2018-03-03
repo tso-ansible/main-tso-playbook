@@ -89,7 +89,8 @@
     dest: /tmp/fetched
 
 - name: Run once on localhost
-  shell: echo 'Hostname,IP,CPU-core,Ram,Disk' > /tmp/fetched/main_output.csv && printf '\r\n' > /tmp/fetched/main_output.csv
+  shell: echo 'Hostname,IP,CPU-core,Ram,Disk' > /tmp/fetched/main_output.csv 
+  #&& printf '\r\n' >> /tmp/fetched/main_output.csv
   run_once: True
   delegate_to: localhost    
 
