@@ -54,7 +54,7 @@
     executable: /bin/bash
     
 - name: Check if remote {{ remote1 }} host port {{ port1 }}
-  wait_for: host={{ remote1 }} port={{ port1 }} timeout=4
+  wait_for: host={{ remote1 }} port={{ port1 }} timeout=1
   ignore_errors: True
   register: result
 
