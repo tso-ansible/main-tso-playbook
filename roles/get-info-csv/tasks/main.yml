@@ -32,7 +32,7 @@
     executable: /bin/bash
 
 - name: Get how many disk
-- shell: cat disk2 | wc -l
+  shell: cat disk2 | wc -l
   args:
     executable: /bin/bash
   register: countline
