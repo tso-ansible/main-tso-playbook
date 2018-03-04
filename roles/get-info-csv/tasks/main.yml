@@ -27,7 +27,7 @@
     executable: /bin/bash
 
 - name: Get Disk Info ***disk-calculation***  
-  #calculation is wrong if there's a disk with MB
+  #calculation will be wrong if there's a disk with MB
   shell: fdisk -l|grep /dev/sd > disk && awk '/Disk \/dev\/sd/ {print $3}' disk  > disk2
   args:
     executable: /bin/bash
