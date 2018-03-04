@@ -14,7 +14,7 @@
     executable: /bin/bash
   register: value
 
-- name: 
+- name:  show value
   debug: msg="{{ value.stdout }}"
 
 - name: if count > 1  
