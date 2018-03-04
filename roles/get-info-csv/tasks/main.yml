@@ -16,62 +16,32 @@
   args:
     executable: /bin/bash
 
-- shell: awk '/MemTotal/ {print $2}' /proc/meminfo > memory
+- name: Get memory ***memory-caluculation***
+  shell: awk '/MemTotal/ {print $2}' /proc/meminfo > memory
   args:
     executable: /bin/bash
 
-- name: Get memory in GB
+- name: Get memory in GB ***memory-caluculation***
   shell: awk '{ print $1/1000000}' memory >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash
 
-- name: Get Total Disk in GB only    
-  #calculation is wrong if there's a disk with MB
+- name: Get Disk Info ***disk-calculation***  
+  #calculation will be wrong if there's a disk with MB
   shell: fdisk -l|grep /dev/sd > disk && awk '/Disk \/dev\/sd/ {print $3}' disk  > disk2
   args:
     executable: /bin/bash
-    
-- shell: cat disk2 | wc -l
+
+- name: Get how many disk ***disk-calculation***
+  shell: cat disk2 | wc -l
   args:
     executable: /bin/bash
   register: countline
 
-- name: if count = 1  
-  shell: cat disk2 >> /tmp/{{ ansible_hostname }}_data.csv
+- name: Calculate the sum of disks ***disk-calculation***
+  shell: awk '{sum+=$1} (NR%{{countline.stdout}})==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash 
-  when: countline.stdout == '1'
-  
-- name: if count = 2
-  shell: awk '{sum+=$1} (NR%2)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
-  args:
-    executable: /bin/bash 
-  when: countline.stdout == '2'
-  
-- name: if count = 3
-  shell: awk '{sum+=$1} (NR%3)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
-  args:
-    executable: /bin/bash 
-  when: countline.stdout == '3'
-  
-- name: if count = 4
-  shell: awk '{sum+=$1} (NR%4)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
-  args:
-    executable: /bin/bash 
-  when: countline.stdout == '4'
-
-- name: if count = 5
-  shell: awk '{sum+=$1} (NR%5)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
-  args:
-    executable: /bin/bash 
-  when: countline.stdout == '5'
-  
-- name: if count = 6
-  shell: awk '{sum+=$1} (NR%6)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
-  args:
-    executable: /bin/bash 
-  when: countline.stdout == '6'
-  #For now this is good for max of 6 disk or will find a better script.
   
 - name: delete csv
   shell: rm -f /tmp/{{ ansible_hostname }}_output.csv
@@ -121,7 +91,7 @@
     dest: /tmp/fetched
 
 - name: Run once on localhost
-  shell: echo 'Hostname,IP,CPU-core,Ram,Disk' > /tmp/fetched/main_output.csv 
+  shell: echo 'Hostname,IP,CPU-Core,Ram-GB,Disk-GB' > /tmp/fetched/main_output.csv 
   run_once: True
   delegate_to: localhost    
 
