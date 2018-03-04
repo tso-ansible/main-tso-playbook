@@ -14,6 +14,9 @@
     executable: /bin/bash
   register: value
 
+- name: 
+  debug: msg="{{ value.stdout }}"
+
 - name: if count > 1  
   shell: awk '{sum+=$1} (NR%3)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
   args:
