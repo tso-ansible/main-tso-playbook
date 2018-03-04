@@ -1,21 +1,14 @@
 ---
 - name: Get Total Disk in GB only    
   #calculation is wrong if there's a disk with MB
-  shell: fdisk -l|grep /dev/sd > disk
+  shell: fdisk -l|grep /dev/sd > disk && awk '/Disk \/dev\/sd/ {print $3}' disk  > disk2
   args:
     executable: /bin/bash
     
-- shell: awk '/Disk \/dev\/sd/ {print $3}' disk  > disk2
-  args:
-    executable: /bin/bash
-
 - shell: cat disk2 | wc -l
   args:
     executable: /bin/bash
   register: countline
-
-#- name:  show value
-#  debug: msg="{{ countline.stdout }}"
 
 - name: if count = 1  
   shell: cat disk2 > /tmp/{{ ansible_hostname }}_data.csv
@@ -40,3 +33,16 @@
   args:
     executable: /bin/bash 
   when: countline.stdout == '4'
+
+- name: if count = 5
+  shell: awk '{sum+=$1} (NR%5)==0{print sum}' disk2 > /tmp/{{ ansible_hostname }}_data.csv
+  args:
+    executable: /bin/bash 
+  when: countline.stdout == '5'
+  
+- name: if count = 6
+  shell: awk '{sum+=$1} (NR%6)==0{print sum}' disk2 > /tmp/{{ ansible_hostname }}_data.csv
+  args:
+    executable: /bin/bash 
+  when: countline.stdout == '6'
+  
