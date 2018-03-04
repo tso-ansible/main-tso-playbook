@@ -16,12 +16,12 @@
   args:
     executable: /bin/bash
 
-- name: Get memory ***memorycaluculation***
+- name: Get memory ***memory-caluculation***
   shell: awk '/MemTotal/ {print $2}' /proc/meminfo > memory
   args:
     executable: /bin/bash
 
-- name: Get memory in GB ***memorycaluculation***
+- name: Get memory in GB ***memory-caluculation***
   shell: awk '{ print $1/1000000}' memory >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash
