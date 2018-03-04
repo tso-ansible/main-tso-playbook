@@ -21,7 +21,7 @@
   shell: cat disk2 >> /tmp/{{ ansible_hostname }}_data.csv
   args:
     executable: /bin/bash 
-  when: countline.stdout = "1"
+  when: countline.stdout == '1'
   
 - name: if count > 1  
   shell: awk '{sum+=$1} (NR%3)==0{print sum}' disk2 >> /tmp/{{ ansible_hostname }}_data.csv
