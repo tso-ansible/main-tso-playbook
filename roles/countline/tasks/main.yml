@@ -9,7 +9,7 @@
   args:
     executable: /bin/bash
 
-- shell: disk2 | wc -l
+- shell: cat disk2 | wc -l
   args:
     executable: /bin/bash
   register: value
