@@ -1,0 +1,4 @@
+Hostname,IPAddress,CPUCore,RAM,Disk
+sdcgigdcapmdw02,10.193.176.6,4,28.636,489.6
+,sdcgigdcapmdw01 port 22 is open
+,sdcgigdcapmdw01 port 443 is closed

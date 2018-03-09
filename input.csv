@@ -1,0 +1,3 @@
+Hostname,IPAddress,CPUCore,RAM,Disk
+sdcgigdcapmdw01,10.193.176.5,4,28,765
+sdcgigdcapmdw02,10.193.176.6,4,28,765

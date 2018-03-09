@@ -1,0 +1,5 @@
+Hostname input,Hostname output,IP input,IP fact,CPU core input,CPU core fact,RAM input,RAM fact,Disk input,Disk fact,Message
+sdcgigdcapmdw01,sdcgigdcapmdw01,10.193.176.5,10.193.176.5,4,4,28,28.637,765,764.5,|RAM from input does not match value from fact file.| Disk size from input does not match value from fact file.
+sdcgigdcapmdw02,sdcgigdcapmdw02,10.193.176.6,10.193.176.6,4,4,28,28.636,765,489.6,|RAM from input does not match value from fact file.| Disk size from input does not match value from fact file.
+,,,sdcgigdcapmdw01 port 22 is open,,,,,,,
+,,,sdcgigdcapmdw01 port 443 is closed,,,,,,,
