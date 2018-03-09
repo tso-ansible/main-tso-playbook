@@ -1,0 +1,6 @@
+Server, Check-Server, Firewall-Port, IP, CPU-core, Ram, Disk
+Server1, Server2, 22, 10.193.176.5, 4, 28, 700
+       , Server3, 80, 10.193.176.6, 4, 8, 500
+Server2, Server3, 80, 10.193.176.6, 4, 28, 700
+       , Server3, 22, 10.193.176.7, 4, 8, 500        
+Server3, , ,  10.193.176.7, 4, 8, 500           
