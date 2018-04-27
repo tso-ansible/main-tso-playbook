@@ -20,3 +20,5 @@ sx: male
 remote1: vm1
 port1: 22
 port2: 80
+
+software: tree
